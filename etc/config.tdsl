@@ -1,0 +1,17 @@
+admins = [ 'admin@xiamen', 'admin@test-d' ]
+'config-type' = 'default'
+debug = [ 'server' ]
+'default-virtual-host' = 'xiamen'
+dataSource {
+    default () {
+        uri = 'jdbc:mysql://10.104.113.243/tigasedb?user=root&password=root'
+    }
+}
+userRepository {
+    default () {}
+}
+authRepository {
+    default () {}
+}
+http (class: tigase.http.HttpMessageReceiver) {}
+'sess-man' () {}

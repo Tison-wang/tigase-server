@@ -1,0 +1,17 @@
+--debug = server
+--virt-hosts = 'devel.tigase.org,test-d'
+admins = [ 'admin@devel.tigase.org', 'admin@test-d' ]
+'config-type' = 'default'
+dataSource {
+    default () {
+        uri = 'jdbc:mysql://10.104.113.243/tigasedb?user=root&password=root'
+    }
+}
+userRepository {
+    default () {}
+}
+authRepository {
+    default () {}
+}
+http (class: tigase.http.HttpMessageReceiver) {}
+'sess-man' () {}

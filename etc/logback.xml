@@ -1,0 +1,42 @@
+<!--
+
+    Tigase XMPP Server - The instant messaging server
+    Copyright (C) 2004 Tigase, Inc. (office@tigase.com)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, version 3 of the License.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program. Look for COPYING file in the top folder.
+    If not, see http://www.gnu.org/licenses/.
+
+-->
+<configuration scan="true">
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/tigase.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%date [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="tigase.xmpp.XMPPDomBuilderHandler" level="warn"/>
+    <logger name="tigase.server" level="trace"/>
+    <logger name="tigase.io" level="warn"/>
+    <logger name="tigase.osgi" level="trace"/>
+    <logger name="tigase.xmpp" level="trace"/>
+
+    <!--jetty / http-api configuration-->
+    <logger name="org.eclipse.jetty" level="warn"/>
+
+    <root level="trace">
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
+
