@@ -20,7 +20,7 @@
 create table if not exists tig_stats_log (
   lid            serial,
   ts             TIMESTAMP                 DEFAULT CURRENT_TIMESTAMP,
-  hostname       varchar(2049)    NOT NULL,
+  hostname       varchar(255)    NOT NULL,
   cpu_usage      double precision not null default 0,
   mem_usage      double precision not null default 0,
   uptime         bigint           not null default 0,
@@ -38,7 +38,7 @@ create table if not exists tig_stats_log (
   c2s_conns      int              not null default 0,
   s2s_conns      int              not null default 0,
   bosh_conns     int              not null default 0,
-  primary key (ts, hostname(255))
+  primary key (ts, hostname(200))
 );
 -- QUERY END:
 
